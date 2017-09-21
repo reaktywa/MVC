@@ -11,7 +11,7 @@ class NewsModel extends Model{
 
 	public function allRecords(){
 
-		$result = $this->mysqli->query("SELECT * FROM news WHERE id BETWEEN ".($_GET["OD"])." AND ".($_GET["DO"]).";");
+		$result = $this->mysqli->query("SELECT * FROM news WHERE newsID BETWEEN ".($_GET["OD"])." AND ".($_GET["DO"]).";");
 		//print_r($result);
 		//$result = $this->mysqli->query("SELECT * FROM news");
 		$data=NULL;
