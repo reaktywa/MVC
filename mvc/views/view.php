@@ -1,6 +1,6 @@
 <?php
 
-class View 
+class View
 {
 	public function load($viewName, $data)
 	{
@@ -18,5 +18,5 @@ public function addNews($dataTable)
 }
 
 }
-
+// tabela z uzytkownikami ma miec ID,login,haslo,kategorie i polaczanie z tabela kategorie w ktorej jest ID i kategorie.
 ?>
