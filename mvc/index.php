@@ -1,4 +1,5 @@
-<?php
+<?php include ('header.php');
+
 	//print_r($_GET);
 	$controllerClassName = $_GET['c'];
 	$functionName = $_GET['f'];
@@ -10,7 +11,5 @@
     $controller->$functionName();
 
 	$tab = $_GET = array();
-
-
-
+include ('stopka.php');
 ?>

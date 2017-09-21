@@ -17,8 +17,6 @@ class NewsController
 
 
 
-		//data[0]['tresc']= "<h5>"+data[0]['tresc']+"</h5>"
-		//print_r($data[$wynik][1]);
 	}
 }
 

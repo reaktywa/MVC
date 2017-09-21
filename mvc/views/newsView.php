@@ -1,33 +1,28 @@
-<h1> ROZDZIAL </h1>
+
 <?php
 
 $wynik=count($data);
 while($wynik>0)
 {
 $wynik --;
-echo "<h2 >";
-print_r($data[$wynik][3]);
-echo "<br><br></h2>";
 
-  echo "<h6 style='float:right'>";
-print_r($data[$wynik][1]);
-echo "<br><br></h6>";
+echo "<article class='feature left'>
+  <span class='image'><img src='images/pic01.jpg' alt='' /></span>
+  <div class='content'><h2>";
 
-
-  echo "<h3>";
 print_r($data[$wynik][2]);
-echo "<br><br><br><hr></h3>";
+echo "</h2><p>";
+
+//substr(($data[$wynik][2]),0,5);
+
+print_r(substr(($data[$wynik][3]),0,120));
+echo "...</p>
+<ul class='actions'>
+  <li>
+    <a href='#' class='button alt'>More</a>
+  </li>
+</ul>
+</div>
+</article>";
 }
-
-
-?><center>
-<form  action="/action_page.php" method="get" id="dane">
-<input type="hidden" name="od" value=$od-5>
-<input type="hidden" name="do" value=$do-5>
-</form>
-<button type="submit" form="nameform" value="Submit">Poprzednia</button><b> <?php echo "1" ?> </b>
-<form  action="/action_page.php" method="get" id="dane">
-<input type="hidden" name="od" value=$od+5>
-<input type="hidden" name="do" value=$do+5>
-</form>
-<button type="submit" form="nameform" value="Submit">Następna</button></center>
+?>
