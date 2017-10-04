@@ -1,2 +1,0 @@
-Aby w³¹czyæ projekt nale¿y wczeœniej w³¹czyæ serwer Apache oraz MySQL.
-Nastêpnie wpisaæ w pasku przegl¹darki: http://localhost/MVC/mvc/index.php?c=NewsController&f=test&OD=1&DO=5#

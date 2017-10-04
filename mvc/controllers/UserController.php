@@ -1,6 +1,9 @@
 <?php
 
-require './models/models.php';
+include './models/models.php';
+include './views/view.php';
+//include "./models/UserModel.php";
+//include './views/logowanieView.php';
 
 class UserController
 {
@@ -11,11 +14,28 @@ class UserController
 
   public function logowanie($login,$haslo)
   {
+    $model = new UserModel('localhost', 'root', '', 'newssystem');
+
+$_GET[$login]=$login;
+$_GET[$haslo]=$haslo;
 
   }
-}
 
-class User extends controller
+  public function formularz()
+  {
+    $view = new View();
+    $view->load2("logowanieView");
+  }
+
+ public function formularz2()
+  {
+    $view = new View();
+    $view->load2("rejestracjaView");
+  }
+
+}
+/*
+class User extends Model
 {
 public $userModel;
 public function __construct(){
@@ -31,5 +51,5 @@ public function login($data)
   print_r($loginInfo);
 }
 }
-
+*/
  ?>

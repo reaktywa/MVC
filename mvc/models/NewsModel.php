@@ -1,7 +1,9 @@
 <?php
 
 require './models/models.php';
-class NewsModel extends Model{
+
+class NewsModel extends Model
+{
 
 	public function __construct($host, $database, $username, $password)
 	{
@@ -10,8 +12,6 @@ class NewsModel extends Model{
 	}
 
 	public function allRecords(){
-
-
 
 		$result = $this->mysqli->query("SELECT * FROM news LIMIT 4 OFFSET ".($_GET["DO"]).";");
 		//print_r($result);
@@ -22,9 +22,19 @@ class NewsModel extends Model{
 			$data[]=$row;
 		}
 		return $data;
+	}
 
+	public function single()
+	{
+		$result = $this->mysqli->query("SELECT * FROM news WHERE NewsID=9");
+
+		$data=NULL;
+		while($row=$result->fetch_array())
+		{
+			$data[]=$row;
+		}
+		return $data;
 	}
 }
-
 
 ?>

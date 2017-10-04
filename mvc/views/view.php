@@ -7,6 +7,11 @@ class View
 		include ".\\views\\$viewName" . ".php";
 	}
 
+	public function load2($viewName)
+	{
+		include ".\\views\\$viewName" . ".php";
+	}
+
 public function getNews()
 {
 	$this->loadView('addArticle');

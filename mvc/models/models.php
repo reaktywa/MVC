@@ -9,7 +9,7 @@ class Model{
 
 	public function __construct($host,  $username, $password, $database){
 		$this->mysqli = new mysqli($host, $username, $password, $database);
-		echo "Połączono z bazą danych</br>" ;
+		
 
 	}
 

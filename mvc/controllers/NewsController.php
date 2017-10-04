@@ -15,8 +15,13 @@ class NewsController
 
     $view->load("newsView", $data);
 
-
-
+	}
+	public function singleView()
+	{
+		$model = new NewsModel('localhost', 'root', '', 'newssystem');
+		$data=$model->single();
+		$view=new View();
+		$view->load("singleView",$data);
 	}
 }
 
