@@ -1,6 +1,7 @@
 <?php
 
-class Model{
+class Model
+{
 	public $mysqli;
 	public $host;
 	public $database;
@@ -9,19 +10,8 @@ class Model{
 
 	public function __construct($host,  $username, $password, $database){
 		$this->mysqli = new mysqli($host, $username, $password, $database);
-		
 
 	}
-
-
-
-
-
 }
-
-
-
-
-
 
 ?>

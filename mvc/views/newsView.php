@@ -22,7 +22,7 @@ print_r(substr(($data[$wynik][2]),0,120));
 echo "...</p>
 <ul class='actions'>
   <li>
-    <a href='./index.php?DO=0&c=NewsController&f=singleView#' class='button alt'>Więcej</a>
+    <a href='./index.php?DO=0&c=NewsController&f=singleView&sid=".$data[$wynik][0]."#' class='button alt'>Więcej</a>
   </li>
 </ul>
 </div>

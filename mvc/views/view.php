@@ -12,6 +12,11 @@ class View
 		include ".\\views\\$viewName" . ".php";
 	}
 
+	public function load3($viewName, $data, $data2)
+	{
+		include ".\\views\\$viewName" . ".php";
+	}
+
 public function getNews()
 {
 	$this->loadView('addArticle');

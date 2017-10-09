@@ -1,0 +1,6 @@
+<<<<<<< HEAD
+Aby w³¹czyæ projekt nale¿y wczeœniej w³¹czyæ serwer Apache oraz MySQL.
+=======
+Aby w³¹czyæ projekt nale¿y wczeœniej w³¹czyæ serwer Apache oraz MySQL.
+>>>>>>> 18157326262613cf9485aa3d9d3e4be170ac4eff
+Nastêpnie wpisaæ w pasku przegl¹darki: http://localhost/MVC/mvc/index.php?c=NewsController&f=test&OD=1&DO=5#

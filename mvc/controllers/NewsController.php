@@ -2,18 +2,18 @@
 
 
 include "./models/NewsModel.php";
-include "./views/View.php";
+include "./views/view.php";
 
-class NewsController
+class NewsController //w indexie wołasz sobie klase NewsController i funkcje test
 {
 	public function test()
 	{
 		$model = new NewsModel('localhost', 'root', '', 'newssystem');
-		$data=$model->allRecords();
+		$data=$model->allRecords(); //tu idzie do modelu
 		//print_r($data);
-		$view = new View();
+		$view = new View(); // tu juz ma dane z modelu i
 
-    $view->load("newsView", $data);
+    $view->load("newsView", $data); // wysyla to do view
 
 	}
 	public function singleView()
@@ -22,7 +22,15 @@ class NewsController
 		$data=$model->single();
 		$view=new View();
 		$view->load("singleView",$data);
+
 	}
+	public function coment()
+{
+	$model = new NewsModel('localhost', 'root', '', 'newssystem');
+	$data2=$model->com();
+	$view=new View();
+	$view->load("singleView",$data2);
+}
 }
 
 

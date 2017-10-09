@@ -2,8 +2,10 @@
 
 include './models/models.php';
 include './views/view.php';
+include './models/UserModel.php';
 //include "./models/UserModel.php";
 //include './views/logowanieView.php';
+
 
 class UserController
 {
@@ -12,12 +14,15 @@ class UserController
     $model = new NewsModel('localhost', 'root', '', 'newssystem');
   }
 
-  public function logowanie($login,$haslo)
-  {
-    $model = new UserModel('localhost', 'root', '', 'newssystem');
 
-$_GET[$login]=$login;
-$_GET[$haslo]=$haslo;
+  public function logowanie()
+  {
+    $data=$_POST;
+
+    $model = new UserModel('localhost', 'root', '', 'newssystem');
+    $model->login($data['login'], $data['haslo']);
+
+    //var_dump($_POST);
 
   }
 
