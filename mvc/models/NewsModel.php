@@ -43,13 +43,6 @@ class NewsModel extends Model
 		WHERE n.NewsID = ".($_GET["sid"])."	;"
 	);
 
-
-/*SELECT u.Nick, c.ComentID,n.NewsID  FROM comments c
-		INNER JOIN users u
-		ON c.Author=u.userID
-        LEFT join news n
-        on n.NewsID=c.NewsID*/
-
 		$data=NULL;
 		while($row=$result->fetch_array())
 		{
@@ -58,21 +51,15 @@ class NewsModel extends Model
 		return $data;
 	}
 
-public function com(){
-	$result=$this->mysqli->query("SELECT  c.Text,c.Date,u.Nick  FROM comments c
-		INNER JOIN users u
-		ON c.Author=u.userID
-				LEFT join news n
-				on n.NewsID=c.NewsID
-				WHERE n.NewsID = ".($_GET["sid"])."	;"
-				);
-
-				$data2=NULL;
-				while($row=$result->fetch_array())
-				{
-					$data2[]=$row;
-				}
-				return $data2;
+public function dodkom($nID,$cText,$cAuthor){
+	$this->mysqli->query("INSERT into comments (ComentID, NewsID, Text, Date, Author) values(NULL, '".$nID."', '".$cText."', CURRENT_TIMESTAMP, '".$cAuthor."')");
+	if(mysqli_error($this->mysqli) != '')
+	{
+		echo "Nie udalo sie";
+	}
+	else{
+		echo "Pomyślnie dodano komenta";
+	}
 }
 }
 

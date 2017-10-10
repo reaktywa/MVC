@@ -11,7 +11,10 @@ class UserController
 {
   public function rejestracja()
   {
-    $model = new NewsModel('localhost', 'root', '', 'newssystem');
+    $data=$_POST;
+    $model = new UserModel('localhost', 'root', '', 'newssystem');
+
+    $model->rejestracja($data['login'], $data['haslo'], $data['imie'], $data['nazwisko']);
   }
 
 

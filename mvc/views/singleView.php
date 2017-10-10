@@ -33,10 +33,31 @@ echo"
 
 								<p>";
                 print_r($data[$pop][2]);
-                echo" </p>
+                echo"</p></div></div></div></div></div></div>
 
+                <hr width:80%;>
 
-							</div></div></div></div></div></div>";
+                <div  width:80%;>
+
+                  <div  width:80%;>
+                              <div class='widget-area no-padding blank'>
+                              <div class='status-upload'>
+                                <form action='index.php?c=NewsController&f=coment' method='post'>
+                                  <textarea placeholder='Co o tym myślisz?' name='cText'></textarea>
+                                  <input type='hidden' name='nID' value='";print_r($data[$pop][0]);echo"'>
+                                  <input type='hidden' name='cAuthor' value='3'>
+                                  <br>
+                                <button type='submit' class='btn btn-success green' style='float:right;'><i class='fa fa-share'></i> Wyslij</button>
+                                <br>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+
+                  </div>
+                </div>
+
+							";
 }
 echo "<center>";
 while($wynik2 )

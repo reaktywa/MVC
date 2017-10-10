@@ -26,10 +26,9 @@ class NewsController //w indexie wołasz sobie klase NewsController i funkcje te
 	}
 	public function coment()
 {
+	$data=$_POST;
 	$model = new NewsModel('localhost', 'root', '', 'newssystem');
-	$data2=$model->com();
-	$view=new View();
-	$view->load("singleView",$data2);
+  $model->dodkom($data['nID'], $data['cText'], $data['cAuthor']);
 }
 }
 

@@ -4,30 +4,30 @@
 <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 <div class="container-fluid">
 
-	 <form action="../index.php" method="post" class="register-form">
+	 <form action="index.php?c=UserController&f=rejestracja" method="post" class="register-form">
      <div class="row">
           <div class="col-md-4 col-sm-4 col-lg-4">
-             <label for="Imie">Imie</label>
-              <input name="Imie" class="form-control" type="text">
+             <label for="imie">Imie</label>
+              <input name="imie" class="form-control" type="text">
           </div>
      </div>
      <div class="row">
           <div class="col-md-4 col-sm-4 col-lg-4">
-             <label for="Nazwisko">Nazwisko</label>
-              <input name="Nazwisko" class="form-control" type="text">
+             <label for="nazwisko">Nazwisko</label>
+              <input name="nazwisko" class="form-control" type="text">
           </div>
      </div>
 
       <div class="row">
            <div class="col-md-4 col-sm-4 col-lg-4">
-              <label for="loginek">Login</label>
+              <label for="login">Login</label>
                <input name="login" class="form-control" type="text">
            </div>
       </div>
 
       <div class="row">
            <div class="col-md-4 col-sm-4 col-lg-4">
-              <label for="haselko">Haslo</label>
+              <label for="haslo">Haslo</label>
                <input name="haslo" class="form-control" type="password">
            </div>
       </div>
