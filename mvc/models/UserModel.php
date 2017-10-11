@@ -8,22 +8,27 @@ class UserModel extends Model
 		parent::__construct($host, $database, $username, $password);
 
 	}
+public function wyloguj()
+{
+	$_SESSION['is_open'] = FALSE;
+	echo "wylogowano Cie <br>";
+	echo $_SESSION['is_open'];
+}
 
-	public function login($login,$haslo)
-	{
-
-$result=$this->mysqli->query("select * from users join category on (users.Category=category.CategoryID)"."Where Nick ='".$login."' AND Passwd= '".$haslo."'");
+public function login($login,$haslo){
+$result=$this->mysqli->query("select * from users join category on (users.Category=category.CategoryID)"."Where Nick ='".$login."' AND Passwd= '".$haslo."' AND Ban=0");
 $row=$result->fetch_array();
 $c=count($row);
 if($c==0)
 {
-	echo "nie udalo siee";
+	echo "nie udalo Ci sie";
 }
 else
 {
-	echo "sie udalo";
+	$_SESSION['is_open']=TRUE;
+	echo "Zalogowano<br>";
 }
-	}
+}
 
 public function rejestracja($login, $haslo, $imie, $nazwisko) {
       $result = $this->mysqli->query("select * from users where Nick='".$login."'");
@@ -43,6 +48,7 @@ public function rejestracja($login, $haslo, $imie, $nazwisko) {
       }
     }
 }
+
 
 
 

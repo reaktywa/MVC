@@ -1,4 +1,7 @@
-<?php include ('header.php');
+<?php
+session_start();
+
+include ('header.php');
   //  error_reporting(0);
 	//print_r($_GET);
 	//$controllerClassName = $_GET['c'];

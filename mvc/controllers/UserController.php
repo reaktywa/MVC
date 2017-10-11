@@ -26,19 +26,33 @@ class UserController
     $model->login($data['login'], $data['haslo']);
 
     //var_dump($_POST);
+  }
 
+  public function wyloguj()
+  {
+    $model = new UserModel('localhost', 'root', '', 'newssystem');
+    $model->wyloguj();
   }
 
   public function formularz()
   {
+    if ($_SESSION['is_open']==TRUE){
+			echo "Jesteś zalogowany";
+		}
+    else {
     $view = new View();
     $view->load2("logowanieView");
+  }
   }
 
  public function formularz2()
   {
+    if ($_SESSION['is_open']==TRUE){
+      echo "Jesteś zalogowany";
+    }
+    else{
     $view = new View();
-    $view->load2("rejestracjaView");
+    $view->load2("rejestracjaView");}
   }
 
 }

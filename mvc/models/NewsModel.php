@@ -16,6 +16,7 @@ class NewsModel extends Model
 		$result = $this->mysqli->query("SELECT n.NewsID,n.Title,n.Text,n.Date,(u.Nick) as Author FROM news n
 		INNER JOIN users u
 		ON n.Author=u.userID
+		order by n.Date ASC
 		limit 4 OFFSET ".($_GET["DO"]).";");
 
 		//print_r($result);
@@ -27,7 +28,6 @@ class NewsModel extends Model
 		}
 		return $data;
 		//$sid=$this->($data[$wynik][0]);
-
 	}
 
 	public function single()
@@ -61,7 +61,20 @@ public function dodkom($nID,$cText,$cAuthor){
 		echo "Pomyślnie dodano komenta";
 	}
 }
+
+public function dodart($nTytul,$nText,$nAuthor){
+	$this->mysqli->query("INSERT into news (NewsID, Title, Text, Date, Author) values(NULL, '".$nTytul."', '".$nText."', CURRENT_TIMESTAMP, '".$nAuthor."')");
+	if(mysqli_error($this->mysqli) != '')
+	{
+		echo "Nie udalo sie";
+	}
+	else{
+		echo "Pomyślnie dodano artykul";
+	}
 }
 
+}
+
+// viewUser::userAddCommentForm();
 
 ?>

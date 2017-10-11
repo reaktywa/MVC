@@ -30,10 +30,19 @@ class NewsController //w indexie wołasz sobie klase NewsController i funkcje te
 	$model = new NewsModel('localhost', 'root', '', 'newssystem');
   $model->dodkom($data['nID'], $data['cText'], $data['cAuthor']);
 }
+
+public function artk()
+{
+	$data=$_POST;
+	$model = new NewsModel('localhost', 'root', '', 'newssystem');
+	$model->dodart($data['nTytul'],$data['nText'],$data['nAuthor']);
 }
 
-
-
+public function dodajart(){
+	 $view = new View();
+	 $view->load2("dodajartView");
+ }
+ }
 
 
 ?>

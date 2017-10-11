@@ -17,6 +17,9 @@
           <a href='/MVC/mvc/index.php?DO=0&c=NewsController&f=test'>Home</a>
         <a href='/MVC/mvc/index.php?DO=0&c=UserController&f=formularz2'>Rejestracja</a>
         <a href='/MVC/mvc/index.php?DO=0&c=UserController&f=formularz'>Zaloguj</a>
+        <a href='/MVC/mvc/index.php?DO=0&c=UserController&f=wyloguj'>Wyloguj</a>
+        <a href='/MVC/mvc/index.php?DO=0&c=NewsController&f=dodajart'>Dodaj Artykul</a>
+        <a href='/MVC/mvc/index.php?DO=0&c=Controller&f=listu'>Wylistuj</a>
  			</header>
 
 
