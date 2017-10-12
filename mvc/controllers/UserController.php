@@ -25,9 +25,23 @@ class UserController
     $model = new UserModel('localhost', 'root', '', 'newssystem');
     $model->login($data['login'], $data['haslo']);
 
+    if ($_SESSION['grupa']==1 && $_SESSION['is_open']==TRUE)
+    {
+      $view = new View();
+      $view->load2("adminView");
+    }
+else if($_SESSION['grupa']==2 && $_SESSION['is_open']==TRUE){
+  header('Location: /MVC/mvc/index.php?DO=0&c=NewsController&f=test');
+}
+
+
     //var_dump($_POST);
   }
-
+public function panel()
+{
+  $view = new View();
+  $view->load2("adminView");
+}
   public function wyloguj()
   {
     $model = new UserModel('localhost', 'root', '', 'newssystem');

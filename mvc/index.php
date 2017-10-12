@@ -1,7 +1,8 @@
 <?php
 session_start();
+//$_SESSION['is_open']=FALSE;
 
-include ('header.php');
+
   //  error_reporting(0);
 	//print_r($_GET);
 	//$controllerClassName = $_GET['c'];
@@ -21,5 +22,5 @@ echo "</br>";
     $controller->$functionName();
 
 	$tab = $_GET = array();
-include ('stopka.php');
+
 ?>

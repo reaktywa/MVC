@@ -7,7 +7,7 @@ Class Controller
   public function __construct() {
 
        //session_start();
-      // $this->buildPage();
+       $this->buildPage();
    }
 
 public function listu()
@@ -27,6 +27,51 @@ public function unban()
    $model->unban();
    header('Location: /MVC/mvc/index.php?DO=0&c=Controller&f=listu');
 }
+public function faillog()
+{
+  $view = new View();
+  $view->load2("faillogView");
+}
+
+public function logowanie()
+{
+  if ($_SESSION['is_open']==TRUE){
+    echo "Jesteś zalogowany";
+  }
+  else{
+  $view = new View();
+  $view->load2("logowanieView");
+}
+}
+
+public function rejestracja()
+{
+  if ($_SESSION['is_open']==TRUE){
+    echo "Jesteś zalogowany";
+  }
+  else {
+  $view = new View();
+  $view->load2("rejestracjaView");
+}
+}
+public function logout()
+{
+  $view = new View();
+  $view->load2("logoutView");
+}
+public function buildPage()
+{
+  if ($_SESSION['is_open']==FALSE){
+  require_once('header.php');
+  require_once('stopka.php');
+}
+else {
+  require_once('zheader.php');
+  require_once('stopka.php');
+}
+
+}
+
 }
 
 

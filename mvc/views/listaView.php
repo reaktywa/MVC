@@ -24,4 +24,5 @@ echo "<div class='row'>
 <hr>
  ";
 }
+echo "<a href='/MVC/mvc/index.php?c=UserController&f=panel'>Wróć</a>";
 ?>

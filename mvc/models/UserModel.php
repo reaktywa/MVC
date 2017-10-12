@@ -10,9 +10,9 @@ class UserModel extends Model
 	}
 public function wyloguj()
 {
-	$_SESSION['is_open'] = FALSE;
-	echo "wylogowano Cie <br>";
-	echo $_SESSION['is_open'];
+	$_SESSION['is_open']=FALSE;
+	$_SESSION['nick']='';
+	header('Location: /MVC/mvc/index.php?DO=0&c=Controller&f=logout');
 }
 
 public function login($login,$haslo){
@@ -21,12 +21,15 @@ $row=$result->fetch_array();
 $c=count($row);
 if($c==0)
 {
-	echo "nie udalo Ci sie";
+	$_SESSION['is_open']=FALSE;
+	header('Location: /MVC/mvc/index.php?DO=0&c=Controller&f=faillog');
 }
 else
 {
 	$_SESSION['is_open']=TRUE;
-	echo "Zalogowano<br>";
+	$_SESSION['grupa']=($row[5]);
+	$_SESSION['nick']=($row[3]);
+
 }
 }
 

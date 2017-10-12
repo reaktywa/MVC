@@ -15,8 +15,8 @@
 			<header id="header" class="alt">
  				<h1>Grzegorz Ociepka</h1>
           <a href='/MVC/mvc/index.php?DO=0&c=NewsController&f=test'>Home</a>
-        <a href='/MVC/mvc/index.php?DO=0&c=Controller&f=rejestracja'>Rejestracja</a>
-        <a href='/MVC/mvc/index.php?DO=0&c=Controller&f=logowanie'>Zaloguj</a>
+        <a href='/MVC/mvc/index.php?DO=0&c=UserController&f=wyloguj'>Wyloguj</a>
+
 
  			</header>
 
@@ -25,7 +25,7 @@
  	<!-- Banner -->
  	<section id="banner">
 
- 		<h2>Witaj nieznajomy</h2>
+ 		<h2><?php echo $_SESSION['nick'];?></h2>
 
  		</section>
 

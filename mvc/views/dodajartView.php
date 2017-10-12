@@ -5,3 +5,4 @@
     <button type='submit' class='btn btn-success green' style='float:right;'><i class='fa fa-share'></i> Wyslij</button>
     <br>
     </form>
+<a href='/MVC/mvc/index.php?c=UserController&f=panel'>Wróć</a>
